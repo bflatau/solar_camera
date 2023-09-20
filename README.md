@@ -13,6 +13,12 @@
 * Restart the Pi
 * Run the PiJuice CLI `sudo -u pijuice python3 /usr/bin/pijuice_cli.py`
 
+## Setup Raspi Camera
+
+* raspi-config --> Interface Options --> Enable Legacy Camera
+* Reboot
+* Test via `raspistill -o FOLDER/image.jpg`
+
 
 REFERENCE: https://raspberrypi-guide.github.io/other/boot-automation-pijuice
 REFERENCE (PI CAMERA): https://learn.pi-supply.com/make/pijuice-remote-camera-project/
