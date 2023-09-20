@@ -21,7 +21,8 @@
 
 
 REFERENCE: https://raspberrypi-guide.github.io/other/boot-automation-pijuice
-REFERENCE (PI CAMERA): https://learn.pi-supply.com/make/pijuice-remote-camera-project/
-REFERNCE: https://www.tomshardware.com/how-to/stream-live-video-raspberry-pi
-REFERNCE: https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/0
+REFERENCE: (PI CAMERA): https://learn.pi-supply.com/make/pijuice-remote-camera-project/
+REFERENCE: https://www.tomshardware.com/how-to/stream-live-video-raspberry-pi
+REFERENCE: https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/0
+REFERENCE: https://picamera.readthedocs.io/en/release-1.13/recipes1.html
 
