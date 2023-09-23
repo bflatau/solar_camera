@@ -28,6 +28,23 @@
 * raspi-config --> Interface Options --> Enable Legacy Camera
 * Reboot
 * Test via `raspistill -o FOLDER/image.jpg`
+* check that picamera is installed:
+    - `python -c "import picamera"`
+    - `python3 -c "import picamera"`
+* if there are errors, install picamera:
+    - `sudo apt-get update`
+    - `sudo apt-get install python-picamera python3-picamera`
+* to remove picamera:
+    - `sudo apt-get remove python-picamera python3-picamera`
+
+## Setup PiJuice
+* On initial setup, make sure you set up Wakeup alarm **make sure you check `Wakeup Enabled`**
+
+## Setup Camera Script
+* Create script to run at startup
+* Make script executable `chmod +x /home/pi/SCRIPTNAME.py`
+* Add as a startup service `sudo nano /etc/rc.local`
+* Add just before the line `exit 0` --> `python3 /home/pi/scriptlocation/SCRIPTNAME.py &`
 
 
 REFERENCE: https://raspberrypi-guide.github.io/other/boot-automation-pijuice
