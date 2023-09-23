@@ -6,6 +6,16 @@
 * Don't forget to do advanced options to enable ssh + WiFi!!
 * Expand file system
 
+## Install Raspberry Pi Software
+* sudo apt update
+* sudo apt install git
+
+## Generate SSH Key For Repo Access
+
+* `ssh-keygen -t ed25519 -C "your_email@example.com"`
+* add key to github account
+* download repo
+
 ## Install Pijuice Software
 
 * Reference Here: `https://github.com/PiSupply/PiJuice`
