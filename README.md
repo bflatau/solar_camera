@@ -53,3 +53,11 @@ REFERENCE: https://www.tomshardware.com/how-to/stream-live-video-raspberry-pi
 REFERENCE: https://projects.raspberrypi.org/en/projects/getting-started-with-picamera/0
 REFERENCE: https://picamera.readthedocs.io/en/release-1.13/recipes1.html
 REFERENCE: https://raspberrypi-guide.github.io/other/boot-automation-pijuice
+REFERENCE: https://pimylifeup.com/raspberry-pi-syncthing/
+REFERENCE: https://dev.to/matthewvielkind/using-python-and-airtable-3bb7
+REFERENCE: https://dev.to/sh4yy/how-to-send-your-events-and-logs-to-discord-via-python-or-javascript-13li
+REFERENCE: https://github.com/tradingstrategy-ai/python-logging-discord-handler
+
+
+
+
