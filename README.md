@@ -47,6 +47,28 @@
 * Add just before the line `exit 0` --> `python3 /home/pi/scriptlocation/SCRIPTNAME.py &`
 
 
+## Setup Cloudinary
+
+* if pip3 isn't installed, install `sudo apt-get install python3-pip`
+* `pip3 install cloudinary`
+
+
+
+## ENV FILE
+
+* Make sure dotenv is installed , `pip3 install python-dotenv`
+
+* CLOUD_NAME = "cloudinary_cloud_name", 
+* CLOUD_API_KEY = "cloudinary_api_key", 
+* CLOUD_API_SECRET = "cloudinary_api_secret
+
+
+
+
+
+
+
+
 REFERENCE: https://raspberrypi-guide.github.io/other/boot-automation-pijuice
 REFERENCE: (PI CAMERA): https://learn.pi-supply.com/make/pijuice-remote-camera-project/
 REFERENCE: https://www.tomshardware.com/how-to/stream-live-video-raspberry-pi
