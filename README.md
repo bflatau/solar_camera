@@ -52,15 +52,20 @@
 * if pip3 isn't installed, install `sudo apt-get install python3-pip`
 * `pip3 install cloudinary`
 
+## Setup Airtable
 
+* `pip install pyairtable`
 
 ## ENV FILE
 
 * Make sure dotenv is installed , `pip3 install python-dotenv`
 
-* CLOUD_NAME = "cloudinary_cloud_name", 
-* CLOUD_API_KEY = "cloudinary_api_key", 
-* CLOUD_API_SECRET = "cloudinary_api_secret
+* CLOUD_NAME = "cloudinary_cloud_name" 
+* CLOUD_API_KEY = "cloudinary_api_key" 
+* CLOUD_API_SECRET = "cloudinary_api_secret"
+* AIRTABLE_API_KEY = "airtable_api_key"
+* AIRTABLE_BASE_ID = "airtable_base_id"
+* AIRTABLE_TABLE_ID = "airtable_table_id"
 
 
 
