@@ -5,7 +5,16 @@ import logging
 from time import sleep
 from pijuice import PiJuice
 from picamera import PiCamera
+import cloudinary
+import cloudinary.uploader
+from pyairtable import Api
+from dotenv import load_dotenv
 import datetime
+
+load_dotenv()
+
+pj = PiJuice(1,0x14)
+camera = PiCamera()
 
 logging.basicConfig(
 	filename = '/home/pi/pistatus.log',
@@ -13,8 +22,14 @@ logging.basicConfig(
 	format = '%(asctime)s %(message)s',
 	datefmt = '%m/%d/%Y %H:%M:%S')
 
-pj = PiJuice(1,0x14)
-camera = PiCamera()
+cloudinary.config( 
+  cloud_name = os.getenv('CLOUD_NAME'), 
+  api_key = os.getenv('CLOUD_API_KEY'), 
+  api_secret = os.getenv('CLOUD_API_SECRET')
+)
+
+api = Api(os.environ['AIRTABLE_API_KEY'])
+table = api.table(os.environ['AIRTABLE_BASE_ID'], os.environ['AIRTABLE_TABLE_ID'])
 
 
 batterystatus = pj.status.GetChargeLevel()
@@ -37,10 +52,23 @@ if data['powerInput'] == "NOT_PRESENT" and data['powerInput5vIo'] == 'NOT_PRESEN
 
    # Take 5 pictures
     camera.start_preview()
+
     for i in range(5):
-      sleep(5)
-      camera.capture('/home/pi/photos/image_{}.jpg'.format(datetime.datetime.now().strftime("%d_%m_%Y_%H:%M:%S")))
+      sleep(4)
+      image_name = datetime.datetime.now().strftime("%m_%d_%Y_%H:%M:%S") 
+
+      camera.capture('/home/pi/photos/image_{}.jpg'.format(image_name))
+      sleep(1)
+
+      cloudinary.uploader.upload("../../photos/image_{}.jpg".format(image_name), 
+      public_id = "image_{}".format(image_name))
+
+      image_URL = cloudinary.CloudinaryImage("image_{}".format(image_name)).build_url()
+
+      table.create({'Message': 'Current battery level is: %d' % batterystatus['data'], 'Image_URL': image_URL})
+
     camera.stop_preview()
+
 
    # Keep Raspberry Pi running
     sleep(180)
