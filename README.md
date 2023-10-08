@@ -93,4 +93,9 @@ REFERENCE: https://github.com/tradingstrategy-ai/python-logging-discord-handler
 WORKING: https://raspberrypi.stackexchange.com/questions/78991/running-a-script-after-an-internet-connection-is-established
 
 
+SUNSET: https://holypython.com/api-3-sunrise-and-sunset-data/
+SUNSET: https://sunrise-sunset.org/api
+
+
+
 
