@@ -45,16 +45,20 @@
 * Make script executable `chmod +x /home/pi/SCRIPTNAME.py`
 * Add as a startup service `sudo nano /etc/rc.local`
 * Add just before the line `exit 0` --> `python3 /home/pi/scriptlocation/SCRIPTNAME.py &`
+* TEST RC.LOCAL file by going to path `cd /etc/` and then running the script `sudo ./rc.local`
 
 
 ## Setup Cloudinary
 
 * if pip3 isn't installed, install `sudo apt-get install python3-pip`
 * `pip3 install cloudinary`
+* **NOTE**: rc.local file runs as root, so figure that out better, for now do, `sudo pip3 install cloudinary`
 
 ## Setup Airtable
 
 * `pip install pyairtable`
+* **NOTE**: rc.local file runs as root, so figure that out better, for now do, `sudo pip3 install pyairtable`
+
 
 ## ENV FILE
 
@@ -85,6 +89,8 @@ REFERENCE: https://dev.to/matthewvielkind/using-python-and-airtable-3bb7
 REFERENCE: https://dev.to/sh4yy/how-to-send-your-events-and-logs-to-discord-via-python-or-javascript-13li
 REFERENCE: https://github.com/tradingstrategy-ai/python-logging-discord-handler
 
+
+WORKING: https://raspberrypi.stackexchange.com/questions/78991/running-a-script-after-an-internet-connection-is-established
 
 
 
