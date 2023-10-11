@@ -76,7 +76,7 @@ if data['powerInput'] == "NOT_PRESENT" and data['powerInput5vIo'] == 'NOT_PRESEN
    ## added an hour for daylight savings time...
    sun_hour = int(sunset_string[0:1]) + 1
 
-   sun_minute = int(sunset_string[2:4]) - 6
+   sun_minute = int(sunset_string[2:4]) - 4
 
    sun_second = int(sunset_string[5:7])
 
@@ -91,10 +91,9 @@ if data['powerInput'] == "NOT_PRESENT" and data['powerInput5vIo'] == 'NOT_PRESEN
 
    # TAKE PICTURES
    camera.start_preview()
+   sleep(5)
 
    for i in range(5):
-
-      sleep(5)
 
       image_name = datetime.now().strftime("%m_%d_%Y_%H:%M:%S") 
 
@@ -111,7 +110,7 @@ if data['powerInput'] == "NOT_PRESENT" and data['powerInput5vIo'] == 'NOT_PRESEN
 
       table.create({'Message': 'Current battery level is: %d' % batterystatus['data'], 'Image_URL': image_URL})
 
-      sleep(54)
+      sleep(59)
 
    camera.stop_preview()
 
