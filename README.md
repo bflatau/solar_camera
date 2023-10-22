@@ -89,6 +89,8 @@ REFERENCE: https://dev.to/matthewvielkind/using-python-and-airtable-3bb7
 REFERENCE: https://dev.to/sh4yy/how-to-send-your-events-and-logs-to-discord-via-python-or-javascript-13li
 REFERENCE: https://github.com/tradingstrategy-ai/python-logging-discord-handler
 
+LTEDATA: https://www.jeffgeerling.com/blog/2022/using-4g-lte-wireless-modems-on-raspberry-pi
+
 
 WORKING: https://raspberrypi.stackexchange.com/questions/78991/running-a-script-after-an-internet-connection-is-established
 
