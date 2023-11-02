@@ -59,6 +59,25 @@
 * `pip install pyairtable`
 * **NOTE**: rc.local file runs as root, so figure that out better, for now do, `sudo pip3 install pyairtable`
 
+## Setup Wireguard
+* install wireguard `sudo apt install wireguard`
+* as root, go into /etc/wireguard and make a file `wg0.conf`
+* put in wireguard credentials, this site is helpful: https://www.wireguardconfig.com/
+* test/run the configuration: `wg-quick up wg0`
+* setup wireguard to run on boot:
+    * add the service to systemctl: `sudo systemctl enable wg-quick@wg0.service`
+    * reload the daemon: `sudo systemctl daemon-reload`
+    * start the service: `sudo systemctl start wg-quick@wg0` //this may fail if already running wireguard?
+    * REBOOT THE SYSTEM!!! 
+    * test that wireguard loaded: `systemctl status wg-quick@wg0`
+
+
+* To remove the service, do the following: 
+    * `sudo systemctl stop wg-quick@wg0`
+    * `sudo systemctl disable wg-quick@wg0.service`
+    * `sudo rm -i /etc/systemd/system/wg-quick@wg0*`
+    * `sudo systemctl daemon-reload`
+    * `sudo systemctl reset-failed`
 
 ## ENV FILE
 
