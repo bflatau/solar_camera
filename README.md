@@ -59,9 +59,6 @@
 * `pip install pyairtable`
 * **NOTE**: rc.local file runs as root, so figure that out better, for now do, `sudo pip3 install pyairtable`
 
-## Setup Sunset Data
-
-
 
 ## ENV FILE
 
@@ -100,6 +97,8 @@ SUNSET: https://holypython.com/api-3-sunrise-and-sunset-data/
 SUNSET: https://sunrise-sunset.org/api
 
 PARSE LOG FILE: https://pythonic.me/2016/12/20/python-log-file-parsing/
+
+SETUP BATTERY: https://learn.pi-supply.com/make/how-to-setup-connect-your-pijuice-battery/
 
 
 

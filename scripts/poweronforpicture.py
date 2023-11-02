@@ -36,8 +36,9 @@ batterystatus = pj.status.GetChargeLevel()
 
 # If on battery power, shut down after 3min
 data = stat['data']
-if data['powerInput'] == "NOT_PRESENT" and data['powerInput5vIo'] == 'NOT_PRESENT':
 
+#if no power is being supplied AND the USB power is not present (assume it's on battery and do stuff)
+if data['powerInput'] == "NOT_PRESENT" and data['powerInput5vIo'] == 'NOT_PRESENT':
    # Write statement to log
    logging.info('Raspberry Pi on battery power. Current level is: %d Turning off in 7min' % batterystatus['data'])
 
@@ -73,8 +74,7 @@ if data['powerInput'] == "NOT_PRESENT" and data['powerInput5vIo'] == 'NOT_PRESEN
 
    sunset_string = sunrisesunset(f)
 
-   ## added an hour for daylight savings time...
-   sun_hour = int(sunset_string[0:1]) + 1
+   sun_hour = int(sunset_string[0:1])
 
    sun_minute = int(sunset_string[2:4]) - 4
 
@@ -120,7 +120,7 @@ if data['powerInput'] == "NOT_PRESENT" and data['powerInput5vIo'] == 'NOT_PRESEN
 
    # Make sure wakeup_enabled and wakeup_on_charge have the correct values
    pj.rtcAlarm.SetWakeupEnabled(True)
-   pj.power.SetWakeUpOnCharge(0)
+   #pj.power.SetWakeUpOnCharge(0)
 
    alarm_time = pj.rtcAlarm.GetAlarm()['data']
 
