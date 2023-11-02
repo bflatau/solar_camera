@@ -15,6 +15,8 @@ import json
 
 load_dotenv()
 
+keep_pi_on = False
+
 logging.basicConfig(
 	filename = '/home/pi/pistatus.log',
 	level = logging.DEBUG,
@@ -38,7 +40,8 @@ batterystatus = pj.status.GetChargeLevel()
 data = stat['data']
 
 #if no power is being supplied AND the USB power is not present (assume it's on battery and do stuff)
-if data['powerInput'] == "NOT_PRESENT" and data['powerInput5vIo'] == 'NOT_PRESENT':
+# if data['powerInput'] == "NOT_PRESENT" and data['powerInput5vIo'] == 'NOT_PRESENT': 
+if keep_pi_on == False: 
    # Write statement to log
    logging.info('Raspberry Pi on battery power. Current level is: %d Turning off in 7min' % batterystatus['data'])
 
@@ -141,4 +144,4 @@ if data['powerInput'] == "NOT_PRESENT" and data['powerInput5vIo'] == 'NOT_PRESEN
 else:
 
 # 	# Write statement to log
-	logging.info('Raspberry Pi on mains power, not turned off automatically')
+	logging.info('Raspberry Pi not turned off automatically')
