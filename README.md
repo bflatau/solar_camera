@@ -78,6 +78,11 @@
     * `sudo rm -i /etc/systemd/system/wg-quick@wg0*`
     * `sudo systemctl daemon-reload`
     * `sudo systemctl reset-failed`
+ 
+## RASPI WIFI SETUP
+* Generate obscured password: `wpa_passphrase YOUR_SSID YOUR_PASSWORD`
+* Add info to `/etc/wpa_supplicant/wpa_supplicant.conf`
+* The raspi will automatically connect to the nearest/strongest signal
 
 ## ENV FILE
 
