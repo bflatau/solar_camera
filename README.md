@@ -91,7 +91,8 @@
 
 ## ENV FILE
 
-* Make sure dotenv is installed , `pip3 install python-dotenv` , NOTE: run inside solar_camera folder
+* Make sure dotenv is installed , `pip3 install python-dotenv`
+* **NOTE**: rc.local file runs as root, so figure that out better, for now do, `sudo pip3 install python-dotenv`
 * Create .env file in solar_camera top level directory
 
 * CLOUD_NAME = "cloudinary_cloud_name" 
