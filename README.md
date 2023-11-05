@@ -115,6 +115,7 @@ REFERENCE: https://github.com/tradingstrategy-ai/python-logging-discord-handler
 
 LTEDATA: https://www.jeffgeerling.com/blog/2022/using-4g-lte-wireless-modems-on-raspberry-pi
 
+WIFIINFO?? : https://www.raspberrypi-spy.co.uk/2017/04/manually-setting-up-pi-wifi-using-wpa_supplicant-conf/
 
 WORKING: https://raspberrypi.stackexchange.com/questions/78991/running-a-script-after-an-internet-connection-is-established
 
