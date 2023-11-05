@@ -7,8 +7,8 @@
 * Expand file system
 
 ## Install Raspberry Pi Software
-* sudo apt update
-* sudo apt install git
+* `sudo apt update`
+* `sudo apt install git`
 
 ## Generate SSH Key For Repo Access
 
