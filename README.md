@@ -23,6 +23,10 @@
 * Restart the Pi
 * Run the PiJuice CLI `sudo -u pijuice python3 /usr/bin/pijuice_cli.py`
 
+## Make Photo Folder
+* make a folder 'photos' in the home/user/ directory
+* make folder `chmod -R 777` photos
+
 ## Setup Raspi Camera
 
 * raspi-config --> Interface Options --> Enable Legacy Camera
