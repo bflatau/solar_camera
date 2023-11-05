@@ -24,8 +24,8 @@
 * Run the PiJuice CLI `sudo -u pijuice python3 /usr/bin/pijuice_cli.py`
 
 ## Make Photo Folder
-* make a folder 'photos' in the home/user/ directory
-* make folder `chmod -R 777` photos
+* make a folder `photos` in the home/user/ directory
+* make folder `sudo chmod -R 777 photos`
 
 ## Setup Raspi Camera
 
@@ -38,19 +38,12 @@
 * if there are errors, install picamera:
     - `sudo apt-get update`
     - `sudo apt-get install python-picamera python3-picamera`
+    - NOTE: only python3 version may work: `sudo apt-get install python3-picamera`
 * to remove picamera:
     - `sudo apt-get remove python-picamera python3-picamera`
 
 ## Setup PiJuice
 * On initial setup, make sure you set up Wakeup alarm **make sure you check `Wakeup Enabled`**
-
-## Setup Camera Script
-* Create script to run at startup
-* Make script executable `chmod +x /home/pi/SCRIPTNAME.py`
-* Add as a startup service `sudo nano /etc/rc.local`
-* Add just before the line `exit 0` --> `python3 /home/pi/scriptlocation/SCRIPTNAME.py &`
-* TEST RC.LOCAL file by going to path `cd /etc/` and then running the script `sudo ./rc.local`
-
 
 ## Setup Cloudinary
 
@@ -62,6 +55,14 @@
 
 * `pip install pyairtable`
 * **NOTE**: rc.local file runs as root, so figure that out better, for now do, `sudo pip3 install pyairtable`
+
+## Setup Camera Script
+* Create script to run at startup
+* Make script executable `chmod +x /home/pi/SCRIPTNAME.py`
+* Add as a startup service `sudo nano /etc/rc.local`
+* Add just before the line `exit 0` --> `python3 /home/pi/scriptlocation/SCRIPTNAME.py &`
+* TEST RC.LOCAL file by going to path `cd /etc/` and then running the script `sudo ./rc.local`
+
 
 ## Setup Wireguard
 * install wireguard `sudo apt install wireguard`
@@ -90,7 +91,8 @@
 
 ## ENV FILE
 
-* Make sure dotenv is installed , `pip3 install python-dotenv`
+* Make sure dotenv is installed , `pip3 install python-dotenv` , NOTE: run inside solar_camera folder
+* Create .env file in solar_camera top level directory
 
 * CLOUD_NAME = "cloudinary_cloud_name" 
 * CLOUD_API_KEY = "cloudinary_api_key" 
