@@ -106,7 +106,7 @@
 
 
 
-
+CRONJOB: https://dev.to/atapas/send-and-schedule-e-mails-from-a-node-js-app-30p3
 
 
 REFERENCE: https://raspberrypi-guide.github.io/other/boot-automation-pijuice
