@@ -3,21 +3,21 @@ const fs = require('fs');
 
 
 /// SETUP POSTMARK ///
-const client = new postmark.ServerClient(`${process.env.POSTMARK_API_KEY}`);
-
-// const client = new postmark.ServerClient("SERVERTOKEN")
+const client = new postmark.ServerClient(process.env.POSTMARK_API_KEY);
 
 exports.testEmail = (req, res) => {
+    console.log(process.env.POSTMARK_API_KEY)
     res.header("Access-Control-Allow-Origin", "*");
     client.sendEmail({
-        "From": "ben@awarchitect.com",
-        // "To": req.body.email,
-        "To": "bflatau@gmail.com",
-        "Subject": "Ana Williamson Architect Process Materials",
+        "From": "info@momenteaux.com",
+        "To": req.body.email,
+        // "To": "info@momenteaux.com",
+        "Subject": "TESTING 123",
         // "Tag": req.body.type,
         "HtmlBody": fs.readFileSync("./templates/test-email.html", "utf8"),
         "TrackOpens": true,
         "TrackLinks": "HtmlAndText",
+        "MessageStream": "broadcast"
     });
     res.json(req.body.email);
     console.log(req.body)
@@ -26,6 +26,8 @@ exports.testEmail = (req, res) => {
 
 
 exports.sendEmail = (req, res) => {
+
+    
     //BENDO FIX THIS WITH BETTER CORS SOLUTION
     res.header("Access-Control-Allow-Origin", "*");
     client.sendEmail({
