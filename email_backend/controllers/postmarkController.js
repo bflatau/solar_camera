@@ -6,18 +6,16 @@ const fs = require('fs');
 const client = new postmark.ServerClient(process.env.POSTMARK_API_KEY);
 
 exports.testEmail = (req, res) => {
-    console.log(process.env.POSTMARK_API_KEY)
     res.header("Access-Control-Allow-Origin", "*");
     client.sendEmail({
-        "From": "info@momenteaux.com",
-        "To": req.body.email,
-        // "To": "info@momenteaux.com",
-        "Subject": "TESTING 123",
+        "From": process.env.FROM_EMAIL,
+        "To": process.env.TO_EMAIL,
+        "Subject": `Today's Santa Cruz Sunset`,
         // "Tag": req.body.type,
         "HtmlBody": fs.readFileSync("./templates/test-email.html", "utf8"),
         "TrackOpens": true,
         "TrackLinks": "HtmlAndText",
-        "MessageStream": "broadcast"
+        "MessageStream": "outbound"
     });
     res.json(req.body.email);
     console.log(req.body)
