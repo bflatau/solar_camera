@@ -33,9 +33,6 @@ app.use(cors());
 app.route('/email')
     .post(emailController.sendEmail)
 
-app.route('/testemail')
-    .post(emailController.testEmail)
-
 /// SET SERVER CONSTANTS ///
 const PORT = 8080;
 const HOST = '0.0.0.0';
