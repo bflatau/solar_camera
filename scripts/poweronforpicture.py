@@ -43,7 +43,7 @@ data = stat['data']
 # if data['powerInput'] == "NOT_PRESENT" and data['powerInput5vIo'] == 'NOT_PRESENT': 
 if keep_pi_on == False: 
    # Write statement to log
-   logging.info('Raspberry Pi on battery power. Current level is: %d Turning off in 7min' % batterystatus['data'])
+   logging.info('Raspberry Pi on battery power. Current level is: %d Turning off in 22min' % batterystatus['data'])
 
 
    # wait 1 minute for raspi to connect to the internet
@@ -79,7 +79,7 @@ if keep_pi_on == False:
 
    sun_hour = int(sunset_string[0:1])
 
-   sun_minute = int(sunset_string[2:4]) - 4
+   sun_minute = int(sunset_string[2:4]) - 21
 
    sun_second = int(sunset_string[5:7])
 
@@ -113,7 +113,7 @@ if keep_pi_on == False:
 
       table.create({'Message': 'Current battery level is: %d' % batterystatus['data'], 'Image_URL': image_URL})
 
-      sleep(59)
+      sleep(299)
 
    camera.stop_preview()
 
