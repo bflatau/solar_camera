@@ -89,7 +89,30 @@
 * Add info to `/etc/wpa_supplicant/wpa_supplicant.conf`
 * The raspi will automatically connect to the nearest/strongest signal
 
-## ENV FILE
+
+## EMAIL SERVER SETUP
+* NEED TO MAKE .ENV FILE FOR BACKEND (SEE BELOW)
+* `npm install`
+* API TEST: `curl -X POST -d email=testemail@gmail.com http://SERVER:8080/email`
+
+#### NODE ENV FILE
+* POSTMARK_API_KEY = 'postmark_api_key"
+* FROM_EMAIL = 'from_email'
+* TO_EMAIL = 'to_email'
+* AIRTABLE_API_KEY = "airtable_api_key"
+* AIRTABLE_BASE_ID = "airtable_base_id"
+* AIRTABLE_TABLE_ID = "airtable_table_id"
+
+## EMAIL SERVER NODJS SERVER
+
+* Install PM2 to run nodejs instance
+
+* `npm install -g pm2`
+* `pm2 start -n "My task name" /path/to/node/script`
+* `pm2 list`
+* `pm2 restart <id of process>`
+
+## PYTHON ENV FILE
 
 * Make sure dotenv is installed , `pip3 install python-dotenv`
 * **NOTE**: rc.local file runs as root, so figure that out better, for now do, `sudo pip3 install python-dotenv`
@@ -101,6 +124,7 @@
 * AIRTABLE_API_KEY = "airtable_api_key"
 * AIRTABLE_BASE_ID = "airtable_base_id"
 * AIRTABLE_TABLE_ID = "airtable_table_id"
+* POSTMARK_API_KEY = 'postmark_api_key"
 
 
 
