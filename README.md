@@ -150,6 +150,8 @@ WIFIINFO?? : https://www.raspberrypi-spy.co.uk/2017/04/manually-setting-up-pi-wi
 
 WORKING: https://raspberrypi.stackexchange.com/questions/78991/running-a-script-after-an-internet-connection-is-established
 
+CUSTOM IMAGE: https://opensource.com/article/21/7/custom-raspberry-pi-image
+
 
 SUNSET: https://holypython.com/api-3-sunrise-and-sunset-data/
 SUNSET: https://sunrise-sunset.org/api
